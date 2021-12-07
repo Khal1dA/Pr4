@@ -1,0 +1,21 @@
+// Project 2 top-level module for ECE 441
+// pr2_top.v
+// Don M. Gruenbacher
+// Mar. 20, 2020
+
+`timescale 1 ns / 1 ns
+
+module pr4 (clk, ar, react, clk_out, sev_segs, sev_segs1, sev_segs2);
+//input [3,0]DFF1
+//input [3,0]DFF2
+
+input clk; // 50 MHz clock
+input ar; // asynchronous reset
+output [7:0] VGA_R, VGA_G, VGA_B;
+output VGA_HS;   // Output horizontal synch
+output VGA_VS;   // Output vertical synch
+output VGA_BLANK, VGA_SYNC;
+output VGA_CLK;
+vga_rom VGA(.CLOCK_50(clk), .ar(ar), .VGA_R(VGA_R), .VGA_G(VGA_G), .VGA_B(VGA_B), .VGA_HS(VGA_HS), .VGA_VS(VGA_VS), .VGA_BLANK(VGA_BLANK), .VGA_SYNC(VGA_SYNC), .VGA_CLK(VGA_CLK));
+
+endmodule
